@@ -10,15 +10,12 @@
 // 'helloSpeaker' on the global scope as well.
 // (Note, Step 6 will be done in the SpeakGoodBye.js file.)
 
-var helloSpeaker = {};
-(function(window){
+(function(window) {
+  var speakWord = "Hello";
+  var helloSpeaker = function (name) {
+    console.log(speakWord + " " + name);
+  }
 
-var speakWord = "Hello";
+  window.helloSpeaker = helloSpeaker;
 
-helloSpeaker.speak = function(name) {
-  console.log(speakWord + " " + name);
-  document.write("<p>Hello " + name + "</p>");
-};
-
-window.helloSpeaker = helloSpeaker;
 })(window);
