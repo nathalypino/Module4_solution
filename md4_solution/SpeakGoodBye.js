@@ -10,17 +10,12 @@
 // STEP 9: Expose the 'byeSpeaker' object to the global scope. Name it
 // 'byeSpeaker' on the global scope as well.
 
-var byeSpeaker = {}; 
-
 (function(window) {
+  var speakWord = "Good Bye";
+  var byeSpeaker = function (name) {
+      console.log(speakWord + " " + name);
+  }
   
-  var speakWord = "Good Bye"; 
-
-  byeSpeaker.speak = function(name) {
-    console.log(speakWord + " " + name);
-    document.write("<p>Good Bye " + name + "</p>"); 
-  };
-
- 
   window.byeSpeaker = byeSpeaker;
+
 })(window);
